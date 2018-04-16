@@ -15,7 +15,8 @@ namespace Talkking2.DA
 
         public DaFireBase()
         {
-            client = new FirebaseClient("https://talkking-25dd8.firebaseio.com");
+
+            client = new FirebaseClient("https://test-d27a4.firebaseio.com");
         }
 
 
@@ -36,21 +37,24 @@ namespace Talkking2.DA
 
         }
 
-        public async Task<List<UserData>> getMyData()
+        public async Task<List<Test>> getMyData()
         {
             var list = (await client
                 .Child("User")
-                .Child("50")
-                .OnceAsync<UserData>())
+                .OrderByKey()
+                .LimitToFirst(1)
+                .OnceAsync<Test>())
                 .Select(item =>
-                        new UserData
-                        {
-                            Age = item.Object.Age,
-                            NickName = item.Object.NickName
-                        }).ToList();
+                    new Test
+                    {
+                        Age = item.Object.Age,
+                        NickName = item.Object.NickName
+                    }).ToList();
 
 
             return list;
+
+      
 
         }
     }

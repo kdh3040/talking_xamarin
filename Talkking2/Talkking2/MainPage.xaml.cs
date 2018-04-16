@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Firebase.Database;
+using Firebase.Database.Query;
+using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
@@ -12,12 +14,13 @@ namespace Talkking2
 {
 	public partial class MainPage : ContentPage
 	{
-        ObservableCollection<UserData> obs = new ObservableCollection<UserData>();
-
+        ObservableCollection<Test> obs = new ObservableCollection<Test>();
+        FirebaseClient client;
         public MainPage()
 		{
 			InitializeComponent();
-            //_lst.BindingContext = obs;
+            client = new FirebaseClient("https://test-d27a4.firebaseio.com/");
+            _lst.BindingContext = obs;
         }
 
         async void Handle_Clicked(object sender, System.EventArgs e)
@@ -26,17 +29,12 @@ namespace Talkking2
 
             var dblit = await db.getMyData();
 
+
             foreach (var item in dblit)
             {
                 obs.Add(item);
+
             }
-
-
-
-
-
-
-
         }
     }
 }

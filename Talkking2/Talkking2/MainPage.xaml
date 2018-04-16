@@ -14,7 +14,7 @@
             <ListView.ItemTemplate>
                 <DataTemplate>
 
-                    <TextCell Text="{Binding name}" Detail="{Binding age}" />
+                    <TextCell Text="{Binding NickName}" Detail="{Binding Age}" />
 
                 </DataTemplate>
 

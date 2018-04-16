@@ -6,22 +6,6 @@ namespace Talkking2.Model
 {
     class UserData
     {
-        private static UserData _Instance;
-
-        public static UserData getInstance()
-        {
-            if (_Instance == null)
-                _Instance = new UserData();
-
-            return _Instance;
-        }
-
-        public bool bMyData
-        {
-            get;
-            set;
-        }
-
         public string UId
         {
             get;
@@ -158,8 +142,6 @@ namespace Talkking2.Model
             get;
             set;
         }
-
-
         public int Point
         {
             get;
@@ -193,18 +175,77 @@ namespace Talkking2.Model
             set;
         }
 
-        public List<UserData> UserData_Heart = new List<UserData>();
-        public List<UserData> UserData_Fan = new List<UserData>();
-        public List<UserData> UserData_Near = new List<UserData>();
-        public List<UserData> UserData_New = new List<UserData>();
+        Dictionary<string, CardData> CardList = new Dictionary<string, CardData>();
+        Dictionary<string, FanData> FanList = new Dictionary<string, FanData>();
+        Dictionary<string, LastChatData> LastChatList = new Dictionary<string, LastChatData>();
 
-        SortedList<string, CardData> CardList = new SortedList<string, CardData>();
-        SortedList<string, UserData> CardData = new SortedList<string, UserData>();
+    }
 
-        SortedList<string, FanData> FanList = new SortedList<string, FanData>();
-        SortedList<string, UserData> FanData = new SortedList<string, UserData>();
+    class CardData
+    {
+        public string Idx
+        {
+            get;
+            set;
+        }
+    }
 
 
+    class FanData
+    {
+        public string Idx
+        {
+            get;
+            set;
+        }
+        public int RecvGold
+        {
+            get;
+            set;
+        }
+        public int Check
+        {
+            get;
+            set;
+        }
+    }
 
+    class LastChatData
+    {
+        public string Age
+        {
+            get;
+            set;
+        }
+        public string TargetNick
+        {
+            get;
+            set;
+        }
+        public string TargetImg
+        {
+            get;
+            set;
+        }
+        public string TargetMsg
+        {
+            get;
+            set;
+        }
+        public string SendName
+        {
+            get;
+            set;
+        }
+        public long SendDate
+        {
+            get;
+            set;
+        }
+        public int SendHoney
+        {
+            get;
+            set;
+        }
     }
 }
