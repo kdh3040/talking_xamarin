@@ -9,7 +9,7 @@
            HorizontalOptions="Center" />
 
     <StackLayout>
-        <Button Text="getir" Clicked="Handle_Clicked"/>
+    
         <ListView x:Name="_lst" ItemsSource="{Binding .}">
             <ListView.ItemTemplate>
                 <DataTemplate>

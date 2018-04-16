@@ -6,67 +6,12 @@ namespace Talkking2.Model
 {
     class UserData
     {
-        public string UId
-        {
-            get;
-            set;
-        }
-        public string Idx
-        {
-            get;
-            set;
-        }
-        public string Token
-        {
-            get;
-            set;
-        }
-        public string Img
-        {
-            get;
-            set;
-        }
-        public string NickName
-        {
-            get;
-            set;
-        }
-        public string Gender
-        {
-            get;
-            set;
-        }
         public string Age
         {
             get;
             set;
         }
-        public double Lat
-        {
-            get;
-            set;
-        }
-        public double Lon
-        {
-            get;
-            set;
-        }
-        public double Dist
-        {
-            get;
-            set;
-        }
-        public int Honey
-        {
-            get;
-            set;
-        }
-        public int Heart
-        {
-            get;
-            set;
-        }
-        public long RecvGold
+        public int ConnectDate
         {
             get;
             set;
@@ -76,7 +21,32 @@ namespace Talkking2.Model
             get;
             set;
         }
-        public string Memo
+        public double Dist
+        {
+            get;
+            set;
+        }
+        public long FanCount
+        {
+            get;
+            set;
+        }
+        public string Gender
+        {
+            get;
+            set;
+        }
+        public int Honey
+        {
+            get;
+            set;
+        }
+        public string Idx
+        {
+            get;
+            set;
+        }
+        public string Img
         {
             get;
             set;
@@ -106,38 +76,22 @@ namespace Talkking2.Model
             get;
             set;
         }
-
-        public int Item_1
+        public double Lat
         {
             get;
             set;
         }
-        public int Item_2
+        public double Lon
         {
             get;
             set;
         }
-        public int Item_3
+        public int NickChangeCnt
         {
             get;
             set;
         }
-        public int Item_4
-        {
-            get;
-            set;
-        }
-        public int Item_5
-        {
-            get;
-            set;
-        }
-        public int Item_6
-        {
-            get;
-            set;
-        }
-        public int Item_7
+        public string NickName
         {
             get;
             set;
@@ -147,37 +101,21 @@ namespace Talkking2.Model
             get;
             set;
         }
-        public int ConnectDate
+        public long RecvGold
         {
             get;
             set;
         }
-        public long LastBoardWriteTime
+        public string Token
         {
             get;
             set;
         }
-        public long LastAdsTime
-        {
-            get;
-            set;
-        }
+      
 
-        public int NickChangeCnt
-        {
-            get;
-            set;
-        }
-
-        public long FanCount
-        {
-            get;
-            set;
-        }
-
-        Dictionary<string, CardData> CardList = new Dictionary<string, CardData>();
-        Dictionary<string, FanData> FanList = new Dictionary<string, FanData>();
-        Dictionary<string, LastChatData> LastChatList = new Dictionary<string, LastChatData>();
+        //Dictionary<string, CardData> CardList = new Dictionary<string, CardData>();
+        //Dictionary<string, FanData> FanList = new Dictionary<string, FanData>();
+        //Dictionary<string, LastChatData> LastChatList = new Dictionary<string, LastChatData>();
 
     }
 

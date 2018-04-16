@@ -14,27 +14,32 @@ namespace Talkking2
 {
 	public partial class MainPage : ContentPage
 	{
-        ObservableCollection<Test> obs = new ObservableCollection<Test>();
+       private DataMng mDataMng = DataMng.getInstance();
         FirebaseClient client;
+        DaFireBase DAF ;
         public MainPage()
 		{
 			InitializeComponent();
             client = new FirebaseClient("https://test-d27a4.firebaseio.com/");
-            _lst.BindingContext = obs;
+            DAF = new DaFireBase();
+
+
+            _lst.BindingContext = mDataMng;
+            InitMyData();
+        //    InitUserData();
         }
 
-        async void Handle_Clicked(object sender, System.EventArgs e)
+        async void InitMyData()
         {
-            var db = new DaFireBase();
-
-            var dblit = await db.getMyData();
-
-
-            foreach (var item in dblit)
-            {
-                obs.Add(item);
-
-            }
+            await DAF.GetMyData();
+        }
+        async void InitUserData()
+        {
+         //   await DAF.GetUserData_Heart();
+            //await DAF.GetUserData_Fan();
+            //await DAF.GetUserData_Near();
+            //await DAF.GetUserData_New();
+            
         }
     }
 }
